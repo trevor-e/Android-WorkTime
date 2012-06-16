@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class WorkTimeActivity extends Activity 
 {
+	//Member variables
 	AudioManager audioManager;
 	WifiManager wifi;
 	BluetoothAdapter btAdapter;
