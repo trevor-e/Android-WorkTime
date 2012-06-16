@@ -90,6 +90,7 @@ public class WorkTimeActivity extends Activity
 				if(btAdapter != null)
 				{
 					btAdapter.enable();
+					Toast.makeText(getApplicationContext(), "Bluetooth Enabled!", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -102,6 +103,7 @@ public class WorkTimeActivity extends Activity
 				if(btAdapter != null)
 				{
 					btAdapter.disable();
+					Toast.makeText(getApplicationContext(), "Bluetooth Disabled!", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
