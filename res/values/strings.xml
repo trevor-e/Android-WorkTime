@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WorkTime</string>
+    <string name="profileTag">...</string>
+    <string name="Configure">Configure</string>
+    <string name="maxVolume">Max Volume</string>
+    <string name="muteVolume">Mute Volume</string>
+    <string name="wifiOff">Wifi Off</string>
+    <string name="wifiOn">Wifi On</string>
+    <string name="btOff">Bluetooth Off</string>
+    <string name="btOn">Bluetooth On</string>
+
+</resources>
