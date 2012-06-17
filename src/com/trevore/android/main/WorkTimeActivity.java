@@ -2,12 +2,16 @@ package com.trevore.android.main;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.media.AudioManager;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class WorkTimeActivity extends Activity 
@@ -16,6 +20,16 @@ public class WorkTimeActivity extends Activity
 	AudioManager audioManager;
 	WifiManager wifi;
 	BluetoothAdapter btAdapter;
+	private BroadcastReceiver mBatInfoReceiver = new BroadcastReceiver()
+	{
+		@Override
+		public void onReceive(Context c, Intent i) 
+		{
+			int batValue = i.getIntExtra("level", 0);
+			TextView batLevel = (TextView )findViewById(R.id.batLevel);
+			batLevel.setText("Battery Level: " + Integer.toString(batValue) + "%");
+		}
+	};
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) 
@@ -32,6 +46,7 @@ public class WorkTimeActivity extends Activity
 		audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
 		wifi = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
 		btAdapter = BluetoothAdapter.getDefaultAdapter();
+		registerReceiver(mBatInfoReceiver, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 
 		maxVolume.setOnClickListener(new View.OnClickListener() 
 		{
