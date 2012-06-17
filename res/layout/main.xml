@@ -9,15 +9,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
 
         <TextView
             android:id="@+id/batLevel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textSize="24dp" >
+            android:textSize="20dp" >
         </TextView>
+        
+        <TextView
+            android:id="@+id/wifiInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp" >
+        </TextView>
+        
+        <TextView
+            android:id="@+id/signalInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp" >
+        </TextView>
+        
     </LinearLayout>
 
     <LinearLayout

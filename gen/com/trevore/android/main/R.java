@@ -19,12 +19,14 @@ public final class R {
     }
     public static final class id {
         public static final int batLevel=0x7f060000;
-        public static final int btOff=0x7f060006;
-        public static final int btOn=0x7f060005;
-        public static final int maxVolume=0x7f060001;
-        public static final int muteVolume=0x7f060002;
-        public static final int wifiOff=0x7f060004;
-        public static final int wifiOn=0x7f060003;
+        public static final int btOff=0x7f060008;
+        public static final int btOn=0x7f060007;
+        public static final int maxVolume=0x7f060003;
+        public static final int muteVolume=0x7f060004;
+        public static final int signalInfo=0x7f060002;
+        public static final int wifiInfo=0x7f060001;
+        public static final int wifiOff=0x7f060006;
+        public static final int wifiOn=0x7f060005;
     }
     public static final class layout {
         public static final int main=0x7f030000;
