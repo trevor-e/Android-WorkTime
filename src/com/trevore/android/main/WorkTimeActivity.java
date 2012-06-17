@@ -16,25 +16,25 @@ public class WorkTimeActivity extends Activity
 	AudioManager audioManager;
 	WifiManager wifi;
 	BluetoothAdapter btAdapter;
-	
-    @Override
-    public void onCreate(Bundle savedInstanceState) 
-    {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        
-        Button maxVolume = (Button) findViewById(R.id.maxVolume);
-    	Button muteVolume = (Button) findViewById(R.id.muteVolume);
-    	Button wifiOn = (Button) findViewById(R.id.wifiOn);
-    	Button wifiOff = (Button) findViewById(R.id.wifiOff);
-    	Button btOn = (Button) findViewById(R.id.btOn);
-    	Button btOff = (Button) findViewById(R.id.btOff);
-        audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
-        wifi = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
-        btAdapter = BluetoothAdapter.getDefaultAdapter();
 
-    	maxVolume.setOnClickListener(new View.OnClickListener() 
-    	{
+	@Override
+	public void onCreate(Bundle savedInstanceState) 
+	{
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+
+		Button maxVolume = (Button) findViewById(R.id.maxVolume);
+		Button muteVolume = (Button) findViewById(R.id.muteVolume);
+		Button wifiOn = (Button) findViewById(R.id.wifiOn);
+		Button wifiOff = (Button) findViewById(R.id.wifiOff);
+		Button btOn = (Button) findViewById(R.id.btOn);
+		Button btOff = (Button) findViewById(R.id.btOff);
+		audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+		wifi = (WifiManager) this.getSystemService(Context.WIFI_SERVICE);
+		btAdapter = BluetoothAdapter.getDefaultAdapter();
+
+		maxVolume.setOnClickListener(new View.OnClickListener() 
+		{
 			public void onClick(View v) 
 			{
 				audioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
@@ -48,9 +48,9 @@ public class WorkTimeActivity extends Activity
 				Toast.makeText(getApplicationContext(), "Volume Maxed!", Toast.LENGTH_SHORT).show();
 			}
 		});
-    	
-    	muteVolume.setOnClickListener(new View.OnClickListener() 
-    	{
+
+		muteVolume.setOnClickListener(new View.OnClickListener() 
+		{
 			public void onClick(View v) 
 			{
 				audioManager.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
@@ -65,8 +65,8 @@ public class WorkTimeActivity extends Activity
 			}
 		});
 
-    	wifiOn.setOnClickListener(new View.OnClickListener() 
-    	{
+		wifiOn.setOnClickListener(new View.OnClickListener() 
+		{
 			public void onClick(View v) 
 			{
 				wifi.setWifiEnabled(true);
@@ -74,8 +74,8 @@ public class WorkTimeActivity extends Activity
 			}
 		});
 
-    	wifiOff.setOnClickListener(new View.OnClickListener() 
-    	{
+		wifiOff.setOnClickListener(new View.OnClickListener() 
+		{
 			public void onClick(View v) 
 			{
 				wifi.setWifiEnabled(false);
@@ -83,9 +83,9 @@ public class WorkTimeActivity extends Activity
 			}
 		});
 
-    	btOn.setOnClickListener(new View.OnClickListener() 
-    	{
-			
+		btOn.setOnClickListener(new View.OnClickListener() 
+		{
+
 			public void onClick(View v) 
 			{
 				if(btAdapter != null)
@@ -95,10 +95,10 @@ public class WorkTimeActivity extends Activity
 				}
 			}
 		});
-    	
-    	btOff.setOnClickListener(new View.OnClickListener() 
-    	{
-			
+
+		btOff.setOnClickListener(new View.OnClickListener() 
+		{
+
 			public void onClick(View v) 
 			{
 				if(btAdapter != null)
@@ -108,5 +108,5 @@ public class WorkTimeActivity extends Activity
 				}
 			}
 		});
-    }
+	}
 }
